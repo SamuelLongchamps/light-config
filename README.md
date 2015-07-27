@@ -1,4 +1,4 @@
-# LightConfig
+# LightConfig ![light-config-icon-small](https://cloud.githubusercontent.com/assets/5256911/8899875/e3bcda9e-3407-11e5-984f-ddec45542118.png)
 LightConfig is a lightweight and easy to use java library for configuration data persistence
 
 ### Supported platform
