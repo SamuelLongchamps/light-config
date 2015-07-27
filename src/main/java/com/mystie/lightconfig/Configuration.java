@@ -17,7 +17,7 @@ public interface Configuration
      * @return configurable which owns the configuration
      */
     Configurable<?> getOwner();
-
+    
 	/**
 	 * Add an object linked to the passed key string
 	 *
