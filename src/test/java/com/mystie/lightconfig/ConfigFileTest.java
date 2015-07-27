@@ -1,12 +1,14 @@
 package com.mystie.lightconfig;
 
+import com.mystie.lightconfig.annotation.Config;
+import com.mystie.lightconfig.format.XmlConfigFile;
 import junit.framework.TestCase;
 
 import java.io.File;
 import java.lang.reflect.Field;
 
 /**
- * @author memo
+ * @author Samuel Longchamps
  * @version 1.0
  * @since 1.0
  */

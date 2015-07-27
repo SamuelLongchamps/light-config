@@ -1,5 +1,6 @@
 package com.mystie.lightconfig;
 
+import com.mystie.lightconfig.annotation.Config;
 import javafx.util.Pair;
 
 import java.lang.reflect.Field;
@@ -9,7 +10,7 @@ import java.util.Vector;
 /**
  * Interface for specifying means of managing configured variables
  *
- * @author memo
+ * @author Samuel Longchamps
  * @version 1.0
  * @since 1.0
  */

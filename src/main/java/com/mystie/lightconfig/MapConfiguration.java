@@ -8,7 +8,7 @@ import java.util.*;
  * Implementation of key-value pair mapping feature of a configuration using a
  * hash-map.
  *
- * @author memo
+ * @author Samuel Longchamps
  * @version 1.0
  * @since 1.0
  */

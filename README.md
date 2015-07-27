@@ -4,6 +4,9 @@ LightConfig is a lightweight and easy to use java library for configuration data
 ## Supported platform
 Java 8, distributed as jar library
 
+## Status
+Alpha test, still experimental. Use at your own risks.
+
 ## How to use it?
 By using special annotations on objects to be persisted, a class implementing the 
 Configurable interface and specifying a backend (such as an XML configuration file) can 

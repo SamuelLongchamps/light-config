@@ -3,7 +3,7 @@ package com.mystie.lightconfig;
 import java.io.File;
 
 /**
- * @author memo
+ * @author Samuel Longchamps
  * @version 1.0
  * @since 1.0
  */

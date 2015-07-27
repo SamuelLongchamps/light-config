@@ -1,5 +1,7 @@
-package com.mystie.lightconfig;
+package com.mystie.lightconfig.format;
 
+import com.mystie.lightconfig.*;
+import com.mystie.lightconfig.annotation.Config;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import javafx.util.Pair;
