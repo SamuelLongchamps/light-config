@@ -65,6 +65,7 @@ public abstract class MapConfiguration implements Configuration {
             var.addObserver(obs);
     }
 
+    @Override
     public Collection<Pair<Class, String>> getOmissions() {
         Collection<Pair<Class, String>> lst = Configuration.super.getOmissions();
         lst.add(new Pair<>(MapConfiguration.class, "owner"));

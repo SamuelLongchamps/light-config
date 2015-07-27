@@ -41,7 +41,7 @@ public class ConfigVariable extends Observable
 	}
 
 	/**
-	 * @return variable value
+	 * @return label for this variable
 	 */
 	public String getLabel() {
 		return label;
@@ -54,10 +54,16 @@ public class ConfigVariable extends Observable
 		return value;
 	}
 
+    /**
+     * @return the supplier for the object value
+     */
     private Supplier<Object> getSupplier() {
         return supplier;
     }
 
+    /**
+     * Update the value of the referenced object value using the supplier
+     */
     public void update() {
         value = supplier.get();
     }

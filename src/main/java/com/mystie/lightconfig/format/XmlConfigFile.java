@@ -15,7 +15,7 @@ import java.util.*;
 
 /**
  * Implementation of a configuration file using a hash-map with string key
- * for data holding as an xml file
+ * and persisted as an XML file
  *
  * @author		Samuel Longchamps
  * @version		1.0

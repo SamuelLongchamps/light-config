@@ -8,7 +8,8 @@ import java.util.Collection;
 import java.util.Vector;
 
 /**
- * Interface for specifying means of managing configured variables
+ * Interface for specifying means of managing configured variables from a known
+ * configuration implementation
  *
  * @author Samuel Longchamps
  * @version 1.0
@@ -27,20 +28,31 @@ public interface Configurable<T extends Configuration> {
         return new Vector<>();
     }
 
-
-    default void setAndUpdate(String varStr, Object val) {
+    /**
+     * Generic setter for a field which allows to update the linked
+     * {@link ConfigVariable}'s value.
+     *
+     * @param varStr name of the field to be set
+     * @param val value to be set
+     * @return true if the set operation succeeded, false otherwise
+     */
+    default boolean setAndUpdate(String varStr, Object val) {
         try {
             Field f = getClass().getField(varStr);
-            if(!f.get(this).equals(val)) {
+            Object curVal = f.get(this);
+            if(curVal.getClass().isAssignableFrom(val.getClass())) {
+                if(curVal.equals(val)) return true;
                 f.set(this, val);
                 ConfigVariable cv = getConfiguration().getVar(varStr);
                 assert(cv != null);
                 cv.update();
                 cv.notifyObservers();
+                return true;
             }
         } catch(IllegalAccessException | NoSuchFieldException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     /**
@@ -62,7 +74,7 @@ public interface Configurable<T extends Configuration> {
     /**
      * Update all the configuration variables and notify their observers if a
      * change of value was detected. <br>
-     * Use this method to push a mass changes made to fields annotated with
+     * Use this method to push mass changes made to fields annotated with
      * {@link Config} and avoid the overhead of the update of a large number of
      * fields through their usual setter methods.
      */
