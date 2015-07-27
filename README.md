@@ -13,6 +13,7 @@ Configurable interface and specifying a backend (such as an XML configuration fi
 use save() and load() methods which will respectively write the file or load an existing one.
 
 ### Example
+Setup the configurable class and annotate fields to be persisted using @Config.
 ```java
 public propertiesPanel implements Configurable<ConfigFile> {
     ConfigFile cfg = new XmlConfigFile(this, "~/cfgPnl.xml");
@@ -20,10 +21,12 @@ public propertiesPanel implements Configurable<ConfigFile> {
     
     @Config int cfgVar;
     
-    public void getCfgVar() { cfgVar; }
-    public void setVar(int v) { setAndUpdate("cfgVar", v); }
+    public void getCfgVar() { return cfgVar; }
+    public void setCfgVar(int v) { setAndUpdate("cfgVar", v); }
 }
-...
+```
+Use an instance of the class to save and load the annotated variables values.
+```java
 propertiesPanelInstance.save();
 propertiesPanelInstance.load();
 propertiesPanelInstance.loadOrSave();
