@@ -21,7 +21,7 @@ public propertiesPanel implements Configurable<ConfigFile> {
     
     @Config int cfgVar;
     
-    public void getCfgVar() { return cfgVar; }
+    public int getCfgVar() { return cfgVar; }
     public void setCfgVar(int v) { setAndUpdate("cfgVar", v); }
 }
 ```
